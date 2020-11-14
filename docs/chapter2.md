@@ -61,3 +61,39 @@ DELETE
 - テストがない: 無いわけではないが不十分
 - レイアウトやスタイルが整っていない: サイトデザインや操作法に一貫性がない
 - 理解が困難: scaffoldで自動生成されているので命令の流れが最初はわからない
+
+## Micropostsリソース
+
+### 文字数制限を入れる
+
+**マイクロ**ポストなので記入できる文字数を制限することでマイクロにします｡
+DBに登録するデータに制限を加えるためにはモデルが持つバリデーションという機能を使います｡
+
+モデルの定義ファイルにvalidatesメソッドを用意し次のような書き方でカラムにルールを追加します｡
+
+```ruby
+validates :カラム名(シンボルで指定), ルール(シンボルやハッシュを使う)
+
+# メールアドレスは入力必須､同じ値を重複登録できない､形式は｢〇〇@〇〇｣となっていること
+validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
+
+# 年齢は数値型かつ整数で入力はオプション
+validates :age, numericality: { only_integer: true }, allow_blank: true
+```
+
+### UserとMicropostsとの間にリレーションをつくる
+
+一つのUserは複数のMicropostsを持つ関係を作る
+
+```ruby
+class User < ApplicationRecord
+    has_many :microposts
+end
+```
+
+```ruby
+class Micropost < ApplicationRecord
+    belongs_to :user
+    validation :content, length: { maximum: 140 }
+end
+```
