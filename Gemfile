@@ -13,9 +13,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -41,11 +42,6 @@ group :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
-end
-
-group :production do
-  # Use postgresql as the database for Active Record
-  gem 'pg', '>= 0.18', '< 2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

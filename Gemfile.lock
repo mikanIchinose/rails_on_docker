@@ -79,7 +79,7 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     e2mmap (0.1.0)
-    erubi (1.9.0)
+    erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.13.1)
     formatador (0.2.5)
