@@ -24,10 +24,10 @@
 	"bierner.markdown-preview-github-styles",
 	"bung87.rails",
 	"rebornix.ruby",
-	"vayan.haml",
 	"tabnine.tabnine-vscode",
 	"kaiwood.endwise",
-	"misogi.ruby-rubocop"
+	"misogi.ruby-rubocop",
+	"castwide.solargraph"
 ]
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
