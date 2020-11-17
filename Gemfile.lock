@@ -52,6 +52,7 @@ GEM
     autoprefixer-rails (10.0.2.0)
       execjs
     backport (1.1.2)
+    bcrypt (3.1.16)
     benchmark (0.1.0)
     bindex (0.8.1)
     bootsnap (1.5.1)
@@ -276,6 +277,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.1.0)
   bootstrap-sass
   byebug
