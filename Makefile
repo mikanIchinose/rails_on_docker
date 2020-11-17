@@ -8,6 +8,9 @@ change-owner:
 web:
 	docker-compose exec web bash
 
+console:
+	docker-compose exec web rails console --sandbox
+
 test:
 	docker-compose exec web rails test
 test-controllers:
