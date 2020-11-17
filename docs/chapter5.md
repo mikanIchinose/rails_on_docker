@@ -59,3 +59,12 @@ class ApplicationHelperTest < ActionView::TestCase
     end
 end
 ```
+
+## 統合テスト
+
+生成コマンド
+
+    rails generate integration_test test_name
+    
+インテグレーションテストとはコントローラー同士のやり取りをテストすることです｡
+テストクラスはActionDispach::IntegrationTestを継承しさまざまなヘルパーを使うことができます｡
