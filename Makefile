@@ -8,6 +8,12 @@ web:
 console:
 	docker-compose exec web rails console --sandbox
 
+migrate:
+	docker-compose exec web rails db:migrate
+
+rollback:
+	docker-compose exec web rails db:rollback
+
 test:
 	docker-compose exec web rails test
 test-controllers:
