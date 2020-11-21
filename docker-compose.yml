@@ -15,3 +15,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    # コンテナ内の標準入出力をローカルマシンのターミナルにアタッチするための設定
+    stdin_open: true
+    tty: true
