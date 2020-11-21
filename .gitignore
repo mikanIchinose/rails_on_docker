@@ -20,6 +20,9 @@ pickle-email-*.html
 !/log/.keep
 !/tmp/.keep
 
+# Ignore history files
+.byebug_history
+
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
 config/master.key
