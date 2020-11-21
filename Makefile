@@ -8,10 +8,13 @@ web:
 console:
 	docker-compose run --rm web rails console --sandbox
 
-migrate:
+db_migrate:
 	docker-compose run --rm web rails db:migrate
 
-rollback:
+db_reset:
+	docker-compose run --rm web rails db:migrate:reset
+
+db_rollback:
 	docker-compose run --rm web rails db:rollback
 
 test:
